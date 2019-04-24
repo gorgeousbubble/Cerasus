@@ -1,13 +1,14 @@
 /*
 *     COPYRIGHT NOTICE
-*     Copyright(c) 2018, Team Shanghai Dream Equinox
+*     Copyright(c) 2017~2019, Team Gorgeous Bubble
 *     All rights reserved.
 *
 * @file		SakuraDialog.cpp
 * @brief	This File is SakuraGUI DLL Project.
-* @author	Alopex/Helium
-* @version	v1.00a
+* @author	Alopex/Alice
+* @version	v1.01a
 * @date		2018-10-16	v1.00a	alopex	Create Project.
+* @date		2019-04-20	v1.01a	alopex	Add Notes.
 */
 #include "SakuraDialog.h"
 
@@ -90,7 +91,7 @@ void SAKURADIALOG_CALLMETHOD CSakuraDialog::InitDefaultElement()
 		pElement->GetFontBlend().AddFont(SAKURA_STATE_MOUSEOVER, sFont.strFontName, sFont.nFontSize);
 		pElement->GetFontBlend().AddFont(SAKURA_STATE_PRESSED, sFont.strFontName, sFont.nFontSize);
 
-		CUUintEx sUnitNormalEx = { 0 };
+		S_CS_UNIT_EX_PARA sUnitNormalEx = { 0 };
 		sUnitNormalEx.nScreenWidth = USER_SCREENWIDTH;
 		sUnitNormalEx.nScreenHeight = USER_SCREENHEIGHT;
 		sUnitNormalEx.nTextureWidth = 16;
@@ -125,7 +126,7 @@ void SAKURADIALOG_CALLMETHOD CSakuraDialog::InitDefaultElement()
 		sUnitNormalEx.sCoordsTransformPara.sViewPortTransformPara.nUserWidth = USER_SCREENWIDTH;
 		sUnitNormalEx.sCoordsTransformPara.sViewPortTransformPara.nUserHeight = USER_SCREENHEIGHT;
 
-		CUUintEx sUnitPressedEx = { 0 };
+		S_CS_UNIT_EX_PARA sUnitPressedEx = { 0 };
 		sUnitPressedEx.nScreenWidth = USER_SCREENWIDTH;
 		sUnitPressedEx.nScreenHeight = USER_SCREENHEIGHT;
 		sUnitPressedEx.nTextureWidth = 16;
@@ -175,7 +176,7 @@ void SAKURADIALOG_CALLMETHOD CSakuraDialog::InitDefaultElement()
 		pElement->GetFontBlend().AddFont(SAKURA_STATE_MOUSEOVER, sFont.strFontName, sFont.nFontSize);
 		pElement->GetFontBlend().AddFont(SAKURA_STATE_PRESSED, sFont.strFontName, sFont.nFontSize);
 
-		CUUintEx sUnitNormalEx = { 0 };
+		S_CS_UNIT_EX_PARA sUnitNormalEx = { 0 };
 		sUnitNormalEx.nScreenWidth = USER_SCREENWIDTH;
 		sUnitNormalEx.nScreenHeight = USER_SCREENHEIGHT;
 		sUnitNormalEx.nTextureWidth = 16;
@@ -210,7 +211,7 @@ void SAKURADIALOG_CALLMETHOD CSakuraDialog::InitDefaultElement()
 		sUnitNormalEx.sCoordsTransformPara.sViewPortTransformPara.nUserWidth = USER_SCREENWIDTH;
 		sUnitNormalEx.sCoordsTransformPara.sViewPortTransformPara.nUserHeight = USER_SCREENHEIGHT;
 
-		CUUintEx sUnitPressedEx = { 0 };
+		S_CS_UNIT_EX_PARA sUnitPressedEx = { 0 };
 		sUnitPressedEx.nScreenWidth = USER_SCREENWIDTH;
 		sUnitPressedEx.nScreenHeight = USER_SCREENHEIGHT;
 		sUnitPressedEx.nTextureWidth = 16;
@@ -377,11 +378,11 @@ void SAKURADIALOG_CALLMETHOD CSakuraDialog::OnCreate(CSakuraResourceManager * pM
 // @Para: None
 // @Return: None
 //------------------------------------------------------------------
-void SAKURADIALOG_CALLMETHOD CSakuraDialog::OnCreate(CSakuraResourceManager * pManager, CUUint sUnit)
+void SAKURADIALOG_CALLMETHOD CSakuraDialog::OnCreate(CSakuraResourceManager * pManager, S_CS_UNIT_PARA sUnit)
 {
 	m_pManager = pManager;
 	m_pDialogGraphics = new CCerasusUnit(m_pManager->GetDevice());
-	m_pDialogGraphics->CCerasusUnitInit(sUnit);
+	m_pDialogGraphics->Create(sUnit);
 	InitDefaultElement();
 }
 
@@ -392,11 +393,11 @@ void SAKURADIALOG_CALLMETHOD CSakuraDialog::OnCreate(CSakuraResourceManager * pM
 // @Para: None
 // @Return: None
 //------------------------------------------------------------------
-void SAKURADIALOG_CALLMETHOD CSakuraDialog::OnCreate(CSakuraResourceManager * pManager, CUUintEx sUnit)
+void SAKURADIALOG_CALLMETHOD CSakuraDialog::OnCreate(CSakuraResourceManager * pManager, S_CS_UNIT_EX_PARA sUnit)
 {
 	m_pManager = pManager;
 	m_pDialogGraphics = new CCerasusUnit(m_pManager->GetDevice());
-	m_pDialogGraphics->CCerasusUnitInit(sUnit);
+	m_pDialogGraphics->Create(sUnit);
 	InitDefaultElement();
 }
 
@@ -426,7 +427,7 @@ void SAKURADIALOG_CALLMETHOD CSakuraDialog::OnLost()
 
 	if (m_pDialogGraphics)
 	{
-		m_pDialogGraphics->CCerasusUnitReset();
+		m_pDialogGraphics->Reset();
 	}
 	
 }
@@ -457,7 +458,7 @@ void SAKURADIALOG_CALLMETHOD CSakuraDialog::OnReset()
 
 	if (m_pDialogGraphics)
 	{
-		m_pDialogGraphics->CCerasusUnitReCreate();
+		m_pDialogGraphics->ReCreate();
 	}
 
 }
@@ -964,7 +965,7 @@ HRESULT SAKURADIALOG_CALLMETHOD CSakuraDialog::AddTexture(int ID, UINT nControlT
 {
 	CSakuraControl* pControl = GetControl(ID, nControlType);
 	CSakuraElement** ppElement = &(pControl->GetElement(iElement));
-	CUUint* pTexture = GetTextureRes(Index);
+	S_CS_UNIT_PARA* pTexture = GetTextureRes(Index);
 
 	if ((*ppElement) == NULL)
 	{
@@ -989,7 +990,7 @@ HRESULT SAKURADIALOG_CALLMETHOD CSakuraDialog::AddTextureEx(int ID, UINT nContro
 {
 	CSakuraControl* pControl = GetControl(ID, nControlType);
 	CSakuraElement** ppElement = &(pControl->GetElement(iElement));
-	CUUintEx* pTexture = GetTextureExRes(Index);
+	S_CS_UNIT_EX_PARA* pTexture = GetTextureExRes(Index);
 
 	if ((*ppElement) == NULL)
 	{
@@ -1639,7 +1640,7 @@ int SAKURADIALOG_CALLMETHOD CSakuraDialog::SetFontRes(CUFont * pFont)
 // @Para: None
 // @Return: None
 //------------------------------------------------------------------
-int SAKURADIALOG_CALLMETHOD CSakuraDialog::SetTextrueRes(CUUint * pTexture)
+int SAKURADIALOG_CALLMETHOD CSakuraDialog::SetTextrueRes(S_CS_UNIT_PARA* pTexture)
 {
 	if (m_pManager == NULL)
 	{
@@ -1656,7 +1657,7 @@ int SAKURADIALOG_CALLMETHOD CSakuraDialog::SetTextrueRes(CUUint * pTexture)
 // @Para: None
 // @Return: None
 //------------------------------------------------------------------
-int SAKURADIALOG_CALLMETHOD CSakuraDialog::SetTextrueExRes(CUUintEx * pTexture)
+int SAKURADIALOG_CALLMETHOD CSakuraDialog::SetTextrueExRes(S_CS_UNIT_EX_PARA* pTexture)
 {
 	if (m_pManager == NULL)
 	{
@@ -1690,7 +1691,7 @@ CUFont *SAKURADIALOG_CALLMETHOD CSakuraDialog::GetFontRes(UINT Index)
 // @Para: None
 // @Return: None
 //------------------------------------------------------------------
-CUUint *SAKURADIALOG_CALLMETHOD CSakuraDialog::GetTextureRes(UINT Index)
+S_CS_UNIT_PARA*SAKURADIALOG_CALLMETHOD CSakuraDialog::GetTextureRes(UINT Index)
 {
 	if (m_pManager == NULL)
 	{
@@ -1707,7 +1708,7 @@ CUUint *SAKURADIALOG_CALLMETHOD CSakuraDialog::GetTextureRes(UINT Index)
 // @Para: None
 // @Return: None
 //------------------------------------------------------------------
-CUUintEx *SAKURADIALOG_CALLMETHOD CSakuraDialog::GetTextureExRes(UINT Index)
+S_CS_UNIT_EX_PARA*SAKURADIALOG_CALLMETHOD CSakuraDialog::GetTextureExRes(UINT Index)
 {
 	if (m_pManager == NULL)
 	{
@@ -1769,12 +1770,12 @@ HRESULT SAKURADIALOG_CALLMETHOD CSakuraDialog::OnRender()
 	// äÖÈ¾´°¿Ú
 	if (m_pDialogGraphics)
 	{
-		m_pDialogGraphics->CCerasusUnitMatrixTransform();
-		m_pDialogGraphics->CCerasusUnitPaddingVertexAndIndex();
-		m_pDialogGraphics->CCerasusUnitSetAlphaBlendEnable();
-		m_pDialogGraphics->CCerasusUnitSetRenderState();
-		m_pDialogGraphics->CCerasusUnitRender();
-		m_pDialogGraphics->CCerasusUnitSetAlphaBlendDisable();
+		m_pDialogGraphics->MatrixTransform();
+		m_pDialogGraphics->PaddingVertexAndIndex();
+		m_pDialogGraphics->SetAlphaEnable();
+		m_pDialogGraphics->SetRenderState();
+		m_pDialogGraphics->Render();
+		m_pDialogGraphics->SetAlphaDisable();
 	}
 
 	// äÖÈ¾¿Ø¼ş

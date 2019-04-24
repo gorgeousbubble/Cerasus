@@ -1,13 +1,14 @@
 /*
 *     COPYRIGHT NOTICE
-*     Copyright(c) 2018, Team Shanghai Dream Equinox
+*     Copyright(c) 2017~2019, Team Gorgeous Bubble
 *     All rights reserved.
 *
 * @file		SakuraCheckBox.cpp
 * @brief	This File is SakuraGUI DLL Project.
-* @author	Alopex/Helium
-* @version	v1.00a
+* @author	Alopex/Alice
+* @version	v1.01a
 * @date		2018-11-10	v1.00a	alopex	Create Project.
+* @date		2019-04-20	v1.01a	alopex	Add Notes.
 */
 #include "SakuraDialog.h"
 #include "SakuraCheckBox.h"
@@ -71,12 +72,12 @@ void SAKURACHECKBOX_CALLMETHOD CSakuraCheckBox::Render()
 			else if (m_bMouseOver == true)
 			{
 				iState = SAKURA_STATE_NORMAL;
-				CCerasusAlgorithm::Increase(m_vecElements.at(0)->GetTextureBlend().m_States[SAKURA_STATE_NORMAL]->CCerasusUnitGetAlpha(), 1.0f, 0.02f);
+				CCerasusAlgorithm::Increase(m_vecElements.at(0)->GetTextureBlend().m_States[SAKURA_STATE_NORMAL]->GetAlpha(), 1.0f, 0.02f);
 			}
 			else
 			{
 				iState = SAKURA_STATE_NORMAL;
-				CCerasusAlgorithm::Decrease(m_vecElements.at(0)->GetTextureBlend().m_States[SAKURA_STATE_NORMAL]->CCerasusUnitGetAlpha(), 0.6f, 0.02f);
+				CCerasusAlgorithm::Decrease(m_vecElements.at(0)->GetTextureBlend().m_States[SAKURA_STATE_NORMAL]->GetAlpha(), 0.6f, 0.02f);
 			}
 		}
 		else
@@ -88,12 +89,12 @@ void SAKURACHECKBOX_CALLMETHOD CSakuraCheckBox::Render()
 			else if (m_bMouseOver == true)
 			{
 				iState = SAKURA_STATE_PRESSED;
-				CCerasusAlgorithm::Increase(m_vecElements.at(0)->GetTextureBlend().m_States[SAKURA_STATE_PRESSED]->CCerasusUnitGetAlpha(), 1.0f, 0.02f);
+				CCerasusAlgorithm::Increase(m_vecElements.at(0)->GetTextureBlend().m_States[SAKURA_STATE_PRESSED]->GetAlpha(), 1.0f, 0.02f);
 			}
 			else
 			{
 				iState = SAKURA_STATE_PRESSED;
-				CCerasusAlgorithm::Decrease(m_vecElements.at(0)->GetTextureBlend().m_States[SAKURA_STATE_PRESSED]->CCerasusUnitGetAlpha(), 0.6f, 0.02f);
+				CCerasusAlgorithm::Decrease(m_vecElements.at(0)->GetTextureBlend().m_States[SAKURA_STATE_PRESSED]->GetAlpha(), 0.6f, 0.02f);
 			}
 		}
 	}
