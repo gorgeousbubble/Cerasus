@@ -18,8 +18,21 @@ Ce projet concerne principalement DX9 pour le jeu, la vidéo, le rendu de papier
 
 ## Constitute
   * ### DirectCommon
+    * #### *`DirectCommon` is a DirectX public header file that contains `DirectX9` and `DirectX11` header files, library files, and some common macros.*
+    * #### *`DirectCommon` also includes functions in the `D3DX` library, including DirectInput, DirectSound, DirectShow, etc.*
+    
+    DirectCommon是一个DirectX公共头文件，包含DirectX9和DirectX11头文件，库文件和一些常见的宏。DirectCommon还包括D3DX库中的函数，包括DirectInput，DirectSound，DirectShow等。
+    
   * ### DirectTypes
+    * #### *`DirectTypes` mainly defines the enumeration and structure of DirectX.*
+    
+    DirectTypes主要定义DirectX的枚举和结构。
+  
   * ### DirectTemplate
+    * #### *`DirectTemplate` defines some commonly used function templates, such as the release of pointer objects and COM interfaces.*
+    
+    DirectTemplate定义了一些常用的函数模板，例如指针对象和COM接口的释放。
+  
   * ### DirectGraphics
   * ### DirectGraphics3D
   * ### DirectGraphics2D
