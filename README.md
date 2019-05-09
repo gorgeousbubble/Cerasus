@@ -1,6 +1,10 @@
 # Cerasus🌸
 This Program is a Cerasus DirectX Render Dynamic Link Library Project.
 
+## Language
+  * [English](https://github.com/Alopex6414/Cerasus/blob/master/README.md)
+  * [简体中文](https://github.com/Alopex6414/Cerasus/blob/master/README_ZH_CN.md)
+
 ## Abstract
 This project is mainly about DX9 playing games, video, wallpaper rendering, music, sound effect, speaker playing, keyboard, mouse, joystick control, and some game related programming. The library is designed for quick and easy development, debugging, testing, and deployment of games, applications, and graphics. The name Cerasus is adopted because it stands for cherry blossom in Latin and is as colorful as our game.
 
@@ -23,6 +27,7 @@ Cerasus now consists of 4 parts, the **Direct** class responsible for DirectX un
      * #### *`DirectInput` class is primarily used for interactive input devices such as keyboards, mice, and joysticks. Provides the ability to interact with the driver layer, including initialization, detection, feedback, and processing.*
      * #### *`DirectSound` class is mainly used for game music effects, and supports Wav and PCM file decoding. Provides the ability to interact with the driver layer, including initialization, detection, feedback, and processing.*
      * #### *`DirectShow` class is mainly used for game animation music playback. The number of decoders supported by itself is not much. The common COM interface is provided, and the corresponding decoding program needs to be written for the development file.*
+     * #### *`DirectMesh` is mainly used to draw some collections of D3DX itself, including cubes, spheres, cylinders, torus, polygons and teapots.*
     &nbsp;
   * ### CerasusClass
     &nbsp;
