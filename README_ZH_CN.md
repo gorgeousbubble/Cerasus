@@ -4,6 +4,8 @@
 ## 语言
   * [English](https://github.com/Alopex6414/Cerasus/blob/master/README.md)
   * [简体中文](https://github.com/Alopex6414/Cerasus/blob/master/README_ZH_CN.md)
+  * [繁體中文](https://github.com/Alopex6414/Cerasus/blob/master/README_ZH_TW.md)
+  * [日本語](https://github.com/Alopex6414/Cerasus/blob/master/README_JA_JP.md)
 
 ## 摘要
 这个项目主要是关于DX9游戏，视频，壁纸渲染，音乐，音效，扬声器播放，键盘，鼠标，操纵杆控制，以及一些游戏相关的编程。 该库旨在快速轻松地开发，调试，测试和部署游戏，应用程序和图形。 Cerasus这个名字被采用是因为它代表拉丁语中的樱花，并且与我们的游戏一样丰富多彩。
@@ -28,6 +30,12 @@ Cerasus现在由4部分组成，**Direct**类负责DirectX底层图形渲染，*
     * #### *`DirectSound`类主要用于游戏音乐效果，并支持Wav和PCM文件解码。提供与驱动程序层交互的功能，包括初始化，检测，反馈和处理。*
     * #### *`DirectShow`类主要用于游戏动画音乐播放。自身支持的解码器数量不多。提供了通用的COM接口，需要为开发文件编写相应的解码程序。*
     * #### *`DirectMesh`主要用于绘制D3DX本身的一些集合，包括立方体，球体，圆柱体，圆环面，多边形和茶壶。*
+    * #### *`DirectFont`类用于字体渲染，这部分不是由Direct3D使用，而是由GDI使用，因此渲染效率不是很高。*
+    * #### *`DirectSprite`主要用于粒子群渲染❄，例如雪花落叶粒子渲染🍂。它可以执行简单2D图形的粒子渲染，如创建，矩阵变换和渲染。*
+    * #### *`DirectSurface`类用于简单的屏幕渲染，屏幕捕获和高效率，可用于创建视频播放器。*
+    * #### *`DirectTexture`类主要用于绘制纹理图形。纹理图像可以从文件或内存加载，用于3D图形或2D图形顶点索引渲染，这比DirectSurface类更强大。*
+    * #### *`DirectThreadSafe`类用于线程之间的资源安全性。使用CriticalSection，它主要保护课堂内的资源并防止资源竞争。*
+    * #### *`DirectSafe`类用于线程之间的资源安全性。与DirectThread相同，在DirectSafe类退出后没有必要删除CriticalSection，可以多次使用。*
     &nbsp;
   * ### CerasusClass
     &nbsp;

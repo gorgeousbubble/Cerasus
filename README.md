@@ -4,6 +4,8 @@ This Program is a Cerasus DirectX Render Dynamic Link Library Project.
 ## Language
   * [English](https://github.com/Alopex6414/Cerasus/blob/master/README.md)
   * [简体中文](https://github.com/Alopex6414/Cerasus/blob/master/README_ZH_CN.md)
+  * [繁體中文](https://github.com/Alopex6414/Cerasus/blob/master/README_ZH_TW.md)
+  * [日本語](https://github.com/Alopex6414/Cerasus/blob/master/README_JA_JP.md)
 
 ## Abstract
 This project is mainly about DX9 playing games, video, wallpaper rendering, music, sound effect, speaker playing, keyboard, mouse, joystick control, and some game related programming. The library is designed for quick and easy development, debugging, testing, and deployment of games, applications, and graphics. The name Cerasus is adopted because it stands for cherry blossom in Latin and is as colorful as our game.
@@ -28,6 +30,12 @@ Cerasus now consists of 4 parts, the **Direct** class responsible for DirectX un
      * #### *`DirectSound` class is mainly used for game music effects, and supports Wav and PCM file decoding. Provides the ability to interact with the driver layer, including initialization, detection, feedback, and processing.*
      * #### *`DirectShow` class is mainly used for game animation music playback. The number of decoders supported by itself is not much. The common COM interface is provided, and the corresponding decoding program needs to be written for the development file.*
      * #### *`DirectMesh` is mainly used to draw some collections of D3DX itself, including cubes, spheres, cylinders, torus, polygons and teapots.*
+     * #### *`DirectFont` class is used for font rendering, this part is not used by Direct3D, but by GDI, so the rendering efficiency is not very high.*
+     * #### *`DirectSprite` is mainly used for particle swarm rendering ❄, such as snowflake deciduous particles rendering 🍂.It can perform particle rendering of simple 2D graphics, such as creation, matrix transformation, and rendering.*
+     * #### *`DirectSurface` class is used for simple screen rendering, screen capture, and high efficiency, which can be used to create video players.*
+     * #### *`DirectTexture` class is mainly used to draw texture graphics. Texture images can be loaded from file or memory for 3D graphics or 2D graphics vertex index rendering, which is more powerful than the DirectSurface class.*
+     * #### *`DirectThreadSafe` class is used for resource security between threads. With CriticalSection, it mainly protects resources within the class and prevents resource competition.*
+     * #### *`DirectSafe` class is used for resource security between threads. The same as DirectThread, it is not necessary to delete the CriticalSection after the DirectSafe class exits, can be used multiple times.*
     &nbsp;
   * ### CerasusClass
     &nbsp;
