@@ -6,6 +6,7 @@
   * [简体中文](https://github.com/Alopex6414/Cerasus/blob/master/README_ZH_CN.md)
   * [繁體中文](https://github.com/Alopex6414/Cerasus/blob/master/README_ZH_TW.md)
   * [日本語](https://github.com/Alopex6414/Cerasus/blob/master/README_JA_JP.md)
+  * [русский](https://github.com/Alopex6414/Cerasus/blob/master/README_RU_RU.md)
 
 ## 要約
 このプロジェクトは主にゲーム、ビデオ、壁紙のレンダリング、音楽、効果音、スピーカーの演奏、キーボード、マウス、ジョイスティックの制御、そしていくつかのゲーム関連のプログラミングを行うDX9についてです。このライブラリは、ゲーム、アプリケーション、およびグラフィックの迅速で簡単な開発、デバッグ、テスト、および展開用に設計されています。 Cerasusという名前が採用されたのは、ラテン語で桜を表し、私たちのゲームと同じくらいカラフルだからです。
@@ -38,6 +39,10 @@ Cerasusは、DirectXの基礎となるグラフィックスレンダリングを
     * #### *`DirectSafe`クラスはスレッド間のリソースセキュリティに使用されます。 DirectThreadと同様に、DirectSafeクラスの終了後にCriticalSectionを削除する必要はなく、複数回使用することができます。*
     &nbsp;
   * ### CerasusClass
+    * #### *`Cerasusfps`は主にD3DXレンダリングのフレームレートを計算し、ゲームがドロップされたかどうかを検出するためにウィンドウに描画するために使用されます。*
+    * #### *`CerasusUnit`は主に3Dの座標系で2Dのプリミティブを描くのに使われ、通常は長方形のプリミティブです。 テクスチャはファイルからロードすることも、リソースを介して解凍することもできます。 CerasusUnitには、3Dプリミティブ座標変換、マテリアル、ライティング、レンダリングの各プロパティもあります。*
+    * #### *`CerasusAlgorithm`クラスは主にいくつかの一般的なグラフィックアルゴリズムを定義します。 これらのアルゴリズムは通常静的メンバー関数として与えられ、プログラム内で呼び出すことができます。*
+    * #### *`CerasusType`は主にCerasusクラスの型を定義するために使われます。*
     &nbsp;
   * ### SakuraClass
     &nbsp;

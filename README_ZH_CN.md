@@ -6,6 +6,7 @@
   * [简体中文](https://github.com/Alopex6414/Cerasus/blob/master/README_ZH_CN.md)
   * [繁體中文](https://github.com/Alopex6414/Cerasus/blob/master/README_ZH_TW.md)
   * [日本語](https://github.com/Alopex6414/Cerasus/blob/master/README_JA_JP.md)
+  * [русский](https://github.com/Alopex6414/Cerasus/blob/master/README_RU_RU.md)
 
 ## 摘要
 这个项目主要是关于DX9游戏，视频，壁纸渲染，音乐，音效，扬声器播放，键盘，鼠标，操纵杆控制，以及一些游戏相关的编程。 该库旨在快速轻松地开发，调试，测试和部署游戏，应用程序和图形。 Cerasus这个名字被采用是因为它代表拉丁语中的樱花，并且与我们的游戏一样丰富多彩。
@@ -38,6 +39,10 @@ Cerasus现在由4部分组成，**Direct**类负责DirectX底层图形渲染，*
     * #### *`DirectSafe`类用于线程之间的资源安全性。与DirectThread相同，在DirectSafe类退出后没有必要删除CriticalSection，可以多次使用。*
     &nbsp;
   * ### CerasusClass
+    * #### *`Cerasusfps`类主要用于计算D3DX渲染的帧速率，并在窗口上绘制以检测游戏是否丢帧。*
+    * #### *`CerasusUnit`类主要用于在3D坐标系中绘制2D图元，通常是矩形图元。 纹理可以从文件加载或通过资源解包。 CerasusUnit还具有3D基元的坐标转换，材质，光照和渲染属性。*
+    * #### *`CerasusAlgorithm`类主要定义一些常用的图形算法。 这些算法通常以静态成员函数的形式给出，可以在程序中调用。*
+    * #### *`CerasusType`类主要用于定义Cerasus类的类型。*
     &nbsp;
   * ### SakuraClass
     &nbsp;
