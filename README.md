@@ -47,11 +47,27 @@ Cerasus now consists of 4 parts, the **Direct** class responsible for DirectX un
      * #### *`CerasusType` class is mainly used to define the type of Cerasus class.*
     &nbsp;
   * ### SakuraClass
+     * #### *`SakuraUICommon` is a shared header file for the Sakura class.*
      * #### *`SakuraBlend` class is mainly used for primitive texture and text rendering.*
      * #### *`SakuraButton` class is mainly used for Button controls.*
      * #### *`SakuraCheckBox` class is mainly used for the CheckBox control.*
      * #### *`SakuraComboBox` class is mainly used for the ComboBox control.*
      * #### *`SakuraControl` class is used for the base class of the control class, providing other control class derived interfaces.*
+     * #### *`SakuraDialog` class is mainly used to build windows. As a container for controls, you can add various types of controls and responses.*
+     * #### *`SakuraEidtBox` class is mainly used for EditBox control.*
+     * #### *`SakuraElement` class is mainly used for control rendering primitives.*
+     * #### *`SakuraListBox` class is mainly used for ListBox control.*
+     * #### *`SakuraRadioButton` class is mainly used for RadioButton control.*
+     * #### *`SakuraResource` class is mainly used for Sakura class resource management.*
+     * #### *`SakuraResourceManager` class is mainly used for Sakura class resource management class.*
+     * #### *`SakuraScrollBar` class is mainly used for the ScrollBar control.*
+     * #### *`SakuraSlider` class is mainly used for the Slider control.*
+     * #### *`SakuraStatic` class mainly for font drawing controls.*
+     * #### *`SakuraUint` class mainly draws primitives.*
     &nbsp;
   * ### DXUIClass
+     The DXUI class is temporarily not completed, to be updated...
     &nbsp;
+    
+## License
+  Copyright (C) 2017~2019, Team Gorgeous Bubble, All Rights Reserved.
